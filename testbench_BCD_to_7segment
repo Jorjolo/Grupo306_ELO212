@@ -1,0 +1,35 @@
+`timescale 1ns / 1ps
+
+module testbench_BCD_to_7seg();
+logic [3:0] BCD_test2;
+logic [6:0] seven_segment;
+
+BCD_7segment DUT(
+.BCD_in(BCD_test2),
+.sevenSeg(seven_segment)
+);
+
+
+initial begin
+BCD_test2 = 4'b0000;
+#3
+BCD_test2 = 4'b0001;
+#3
+BCD_test2 = 4'b0010;
+#3
+BCD_test2 = 4'b0011;
+#3
+BCD_test2 = 4'b0100;
+#3
+BCD_test2 = 4'b0101;
+#3
+BCD_test2 = 4'b0110;
+#3
+BCD_test2 = 4'b0111;
+#3
+BCD_test2 = 4'b1000;
+#3
+BCD_test2 = 4'b1001;
+
+end
+endmodule
