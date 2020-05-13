@@ -1,0 +1,12 @@
+module test_simple();
+
+    logic [3:0] BCD_in;
+    logic fib;
+    
+    
+    
+    fib_rec DUT(
+    .BCD_in(BCD_in),
+    .fib(fib));
+                                  
+endmodule
