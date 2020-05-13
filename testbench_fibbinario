@@ -1,0 +1,35 @@
+`timescale 1ns / 1ps
+
+module testbench_fib1();
+  logic [3:0] BCD_test;
+  logic F;
+  
+   fib_rec DUT(            //reconocedor de número fibbinarios.
+   .BCD_in(BCD_test),
+   .fib(F)
+    );
+    
+   initial begin
+  
+    BCD_test  = 4'b0;
+    #1
+    
+   while (BCD_test <= 4'd15) begin              
+         #5
+         if (BCD_test < 4'd15) begin
+            BCD_test += 1'b1;
+            end
+         else 
+            BCD_test = 4'd15;
+        
+   end
+    
+    
+    //repeat(4'd15) begin               //esta es otra forma de hacerlo
+    //#5 
+    //BCD_test = BCD_test + 1'b1;
+    //end
+    
+end
+
+endmodule
