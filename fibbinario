@@ -1,0 +1,7 @@
+module fib(
+    input logic A,B,C,D,
+    output logic F
+    );
+    
+    assign F = (~A&~C) | (~B&~C) | (~B&~D);
+endmodule
